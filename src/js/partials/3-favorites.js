@@ -1,5 +1,3 @@
-let favoriteSeries = [];
-
 // Generate favorite series list
 function addToFavorites(event) {
   const favorites = selectClass('.js-favorites');
@@ -25,6 +23,7 @@ function addToFavorites(event) {
     listItem.append(image, seriesTitle);
     const favoritesList = selectClass('.js-favorites__list');
     favoritesList.appendChild(listItem);
+    saveFavorites();
   }
 }
 
@@ -37,10 +36,3 @@ function listenToSeries() {
     item.addEventListener("click", addToFavorites);
   }
 }
-
-function onClick() {
-  getSeriesData();
-}
-
-// Click event
-button.addEventListener('click', onClick);

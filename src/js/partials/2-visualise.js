@@ -1,5 +1,6 @@
 function visualise() {
   let resultsContainer = selectClass('.js-results__list');
+  resultsContainer.innerHTML = '';
   for (let movie of searchResults) {
     const listItem = document.createElement('li');
     const image = document.createElement('img');
