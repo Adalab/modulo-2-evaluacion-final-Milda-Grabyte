@@ -1,0 +1,38 @@
+body {
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.favorite {
+  background-color: greenyellow;
+}
+
+.hidden {
+  display: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.results {
+  width: 300px;
+}
+
+.favorites__list--item__btn {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  &-img {
+    height: 30px;
+    width: 30px;
+    align-content: center;
+    justify-content: center;
+  }
+}

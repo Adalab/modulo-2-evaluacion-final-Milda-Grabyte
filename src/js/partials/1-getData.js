@@ -1,3 +1,4 @@
+
 // Class selector
 function selectClass(className) {
   return document.querySelector(className);
@@ -9,20 +10,16 @@ function feedback(element) {
 }
 
 function visualiseFavorites() {
-  for (let favoriteItem of favoriteSeries) {
-    const favorites = selectClass('.js-favorites');
-    favorites.classList.remove('hidden');
-    const listItem = document.createElement('li');
-    listItem.setAttribute('class', 'js-favorites__list--item');
-    const image = document.createElement('img');
-    image.setAttribute('class', 'js-favorites__list--item__img');
-    image.src = favoriteItem.imageSource;
-    const seriesTitle = document.createElement('h4');
-    seriesTitle.setAttribute('class', 'js-favorites__list--item__title');
-    seriesTitle.innerHTML = favoriteItem.name;
-    listItem.append(image, seriesTitle);
-    const favoritesList = selectClass('.js-favorites__list');
-    favoritesList.appendChild(listItem);
+  const favoritesList = selectClass('.js-favorites__list');
+  const favorites = selectClass('.js-favorites');
+  favoritesList.innerHTML = '';
+  if (favoriteSeries.length === 0) {
+    favorites.classList.add('hidden');
+  } else {
+    for (let favoriteItem of favoriteSeries) {
+      favorites.classList.remove('hidden');
+      generateFavoritesDOM(favoritesList, favoriteSeries, favoriteItem);
+    }
   }
 }
 const favoriteSeries = loadFavorites();

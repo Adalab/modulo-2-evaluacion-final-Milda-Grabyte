@@ -1,6 +1,7 @@
 // Generate favorite series list
 function addToFavorites(event) {
   const favorites = selectClass('.js-favorites');
+  const favoritesList = selectClass('.js-favorites__list');
   favorites.classList.remove('hidden');
   const clickedSeries = event.currentTarget;
   const clickedSeriesId = parseInt(clickedSeries.id);
@@ -12,18 +13,8 @@ function addToFavorites(event) {
     const parsedSourceObject = JSON.parse(clickedSeries.dataset.sourceObject);
     clickedSeries.classList.add('favorite');
     favoriteSeries.push(parsedSourceObject); //me lo metía con comillas (string);
-    const listItem = document.createElement('li');
-    listItem.setAttribute('class', 'js-favorites__list--item')
-    const image = document.createElement('img');
-    image.setAttribute('class', 'js-favorites__list--item__img');
-    image.src = parsedSourceObject.imageSource;
-    const seriesTitle = document.createElement('h4');
-    seriesTitle.setAttribute('class', 'js-favorites__list--item__title');
-    seriesTitle.innerHTML = parsedSourceObject.name;
-    listItem.append(image, seriesTitle);
-    const favoritesList = selectClass('.js-favorites__list');
-    favoritesList.appendChild(listItem);
-    saveFavorites();
+    generateFavoritesDOM(favoritesList, favoriteSeries, parsedSourceObject);
+    saveFavorites(favoriteSeries);
   }
 }
 

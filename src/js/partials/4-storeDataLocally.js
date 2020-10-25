@@ -1,4 +1,4 @@
-function saveFavorites() {
+function saveFavorites(favoriteSeries) {
   localStorage.setItem('Favorite series', JSON.stringify(favoriteSeries));
 }
 
