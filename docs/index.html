@@ -4,11 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Movie search engine</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
+  <body class="viewport">
+    <header class="title">Buscador de series</header>
+    <form class="form js-form">
+      <input class="search-field js-search-field" type="text" name="input" title="Type in your search" placeholder="¿Netflix & chill?" autocomplete="off">
+      <input class="button-search js-button" type="button" title="Search movies/series" value="Search">
+    </form>
+    <div class="main">
+      <div class="results">
+        <h2 class="js-results__title results__title">Resultados</h2>
+        <ul class="results__list js-results__list">
+        </ul>
+      </div>
+      <div class="js-favorites favorites hidden">
+        <h2 class="js-favorites__title favorites__title">Mis series favoritas</h2>
+        <ul class="js-favorites__list favorites__list">
+        </ul>
+        <button type="button" class="favorites__list--item__btn--reset js-favorites__list--item__btn--reset">Reset</button>
+      </div>
+    </div>
 
-  <body>
+
     <script type="text/javascript" src="./assets/js/main.js"></script>
   </body>
 </html>
