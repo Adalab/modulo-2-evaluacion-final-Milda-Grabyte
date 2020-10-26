@@ -8,12 +8,12 @@ function generateFavoritesDOM(list, favoriteSeries, item) {
   cancelImage.setAttribute('class', 'favorites__list--item__btn-img js-favorites__list--item__btn-img');
   cancelButton.appendChild(cancelImage);
   listItem.appendChild(cancelButton);
-  listItem.setAttribute('class', 'js-favorites__list--item');
+  listItem.setAttribute('class', 'favorites__list--item js-favorites__list--item');
   const image = document.createElement('img');
-  image.setAttribute('class', 'js-favorites__list--item__img');
+  image.setAttribute('class', 'favorites__list--item__img js-favorites__list--item__img');
   image.src = item.imageSource;
   const seriesTitle = document.createElement('h4');
-  seriesTitle.setAttribute('class', 'js-favorites__list--item__title');
+  seriesTitle.setAttribute('class', 'favorites__list--item__title js-favorites__list--item__title');
   seriesTitle.innerHTML = item.name;
   listItem.append(image, seriesTitle);
   list.appendChild(listItem);

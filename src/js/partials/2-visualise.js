@@ -5,7 +5,7 @@ function visualise() {
     const listItem = document.createElement('li');
     const image = document.createElement('img');
     const seriesTitle = document.createElement('h3');
-    listItem.setAttribute('class', 'js-results__list--item');
+    listItem.setAttribute('class', 'results__list--item js-results__list--item');
     listItem.setAttribute('id', movie.id);
     listItem.dataset.sourceObject = JSON.stringify(movie);
     resultsContainer.appendChild(listItem);

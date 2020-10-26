@@ -3,3 +3,17 @@
   margin: 0;
   padding: 0;
 }
+
+ul {
+  list-style-type: none;
+}
+
+button, button:hover, button:active, button:focus {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  outline: none;
+  border: none;
+}
+
