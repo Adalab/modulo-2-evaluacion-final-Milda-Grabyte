@@ -13,9 +13,14 @@ function loadFavorites() {
   return favoriteSeries;
 }
 
-function onClick() {
-  getSeriesData();
-}
-
 // Click event
-button.addEventListener('click', onClick);
+button.addEventListener('click', getSeriesData);
+
+// Enter key triggers click event
+input.addEventListener('keydown', function (event) {
+  if (event.code === 'Enter') {
+    event.preventDefault();
+    event.stopPropagation();
+    button.click();
+  }
+});
