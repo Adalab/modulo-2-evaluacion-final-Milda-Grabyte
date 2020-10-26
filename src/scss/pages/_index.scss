@@ -59,7 +59,7 @@
   overflow-y: scroll;
   padding: 20px;
   &__title {
-    margin: 0 0 0 20px;
+    margin: 0 0 10px 20px;
     font-family: 'Syne Mono', monospace;
     size: 48px;
   }
@@ -89,6 +89,7 @@
   &__title {
     font-family: 'Syne Mono', monospace;
     size: 48px;
+    margin: 0 0 10px 0;
   }
   &__list--item {
     width: 100%;
