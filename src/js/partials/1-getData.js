@@ -22,11 +22,12 @@ function visualiseFavorites() {
     }
   }
 }
-const favoriteSeries = loadFavorites();
+let favoriteSeries = loadFavorites();
 console.log(favoriteSeries);
 visualiseFavorites();
 
 const button = selectClass('.js-button');
+const resetButton = selectClass('.js-favorites__list--item__btn--reset');
 const input = selectClass('.js-search-field');
 const resultsTitle = selectClass('.js-results__title');
 
@@ -40,6 +41,7 @@ function getSeriesData() {
       if (data.length === 0) {
         resultsTitle.innerHTML = 'No se ha encontrado ninguna serie con este nombre';
       } else {
+        resultsTitle.innerHTML = 'Resultados';
         searchResults = [];
         for (let i = 0; i < data.length; i++) {
           let series = {};

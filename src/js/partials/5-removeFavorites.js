@@ -19,13 +19,22 @@ function generateFavoritesDOM(list, favoriteSeries, item) {
   list.appendChild(listItem);
 
   cancelButton.addEventListener('click', (event) => {
-    const itemPosition = favoriteSeries.indexOf(item);
-    favoriteSeries.splice(itemPosition, 1);
-    feedback(favoriteSeries);
-    saveFavorites(favoriteSeries);
-    visualiseFavorites();
+    removeFavorite(favoriteSeries, item)
   });
 }
 
+function removeFavorite(favoriteSeries, item) {
+  const itemPosition = favoriteSeries.indexOf(item);
+  favoriteSeries.splice(itemPosition, 1);
+  saveFavorites(favoriteSeries);
+  visualiseFavorites();
+}
 
+function resetFavorites() {
+  localStorage.clear();
+  favoriteSeries = loadFavorites();
+  visualiseFavorites();
+}
+
+resetButton.addEventListener('click', resetFavorites);
 

@@ -8,17 +8,24 @@ function addToFavorites(event) {
   const isFavorite = favoriteSeries.findIndex((item) => {
     return item.id === clickedSeriesId;
   });
+
+  clickedSeries.classList.toggle('favorite');
   // Check if a series is in the favorites list
   if (isFavorite === -1) {
     const parsedSourceObject = JSON.parse(clickedSeries.dataset.sourceObject);
-    clickedSeries.classList.add('favorite');
     favoriteSeries.push(parsedSourceObject); //me lo metía con comillas (string);
     generateFavoritesDOM(favoritesList, favoriteSeries, parsedSourceObject);
     saveFavorites(favoriteSeries);
+  } else {
+    // El segundo click elimina de favoritos
+    const item = favoriteSeries.findIndex((item) => {
+      if (item.id === clickedSeriesId) {
+        return item;
+      }
+    });
+    removeFavorite(favoriteSeries, item);
   }
 }
-
-feedback(favoriteSeries);
 
 // Pick one item from the visualised search results
 function listenToSeries() {
